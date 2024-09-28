@@ -67,11 +67,11 @@ buttonJetton.onclick = async () => {
   const body = beginCell()
     .storeUint(0xf8a7ea5, 32)
     .storeUint(0, 64)
-    .storeCoins(10000000)
+    .storeCoins(toNano('0.01'))
     .storeAddress(Address.parse(friend)) // кому
     .storeAddress(Address.parse(owner)) //от кого
     .storeUint(0, 1)
-    .storeCoins(50000000)
+    .storeCoins(toNano('0.05')) // газ
     .storeUint(0, 1)
     .endCell();
 
@@ -80,7 +80,7 @@ buttonJetton.onclick = async () => {
     messages: [
       {
         address: jetton, // Адрес контракта жетона
-        amount: (100000000).toString(), // Комиссия в тонах (если требуется)
+        amount: toNano('0.01').toString(), // Комиссия в тонах (если требуется)
         payload: body.toBoc().toString('base64'), // Тело транзакции
       },
     ],

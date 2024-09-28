@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>fffb</h1>
+      <div id="ton-connect"></div>
+      <button id="all-jettons">Получить все жетоны</button>
+      <div class="form">
+        <div class="ton">
+          <input id="address" type="text" placeholder="Адрес кошелька" />
+          <button id="ton">Ton</button>
+        </div>
+
+        <div class="jetton">
+          <input id="userFriendlyAddress" type="text" placeholder="Адрес друга" />
+          <input id="jettonAmount" type="text" placeholder="Адрес жетон кошелька" />
+          <button id="jetton-btn">Jetton</button>
+        </div>
+      </div>
+      <div id="jettons"></div>
+    </div>
+    <script type="module">
+      import { Buffer } from 'buffer';
+
+      window.Buffer = Buffer;
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

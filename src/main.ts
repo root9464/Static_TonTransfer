@@ -65,14 +65,14 @@ buttonJetton.onclick = async () => {
 
   // Составляем тело транзакции
   const body = beginCell()
-    .storeUint(0xf8a7ea5, 32) // jetton transfer op code
-    .storeUint(0, 64) // query_id:uint64
-    .storeCoins(10000000) // amount:(VarUInteger 16)
-    .storeAddress(Address.parse(friend)) // от кого
-    .storeAddress(Address.parse(owner)) //кому
-    .storeUint(0, 1) // custom_payload:(Maybe ^Cell)
-    .storeCoins(50000000) // forward_ton_amount:(VarUInteger 16)
-    .storeUint(0, 1) // forward_payload:(Either Cell ^Cell)
+    .storeUint(0xf8a7ea5, 32)
+    .storeUint(0, 64)
+    .storeCoins(10000000)
+    .storeAddress(Address.parse(friend)) // кому
+    .storeAddress(Address.parse(owner)) //от кого
+    .storeUint(0, 1)
+    .storeCoins(50000000)
+    .storeUint(0, 1)
     .endCell();
 
   const myTransaction = {
